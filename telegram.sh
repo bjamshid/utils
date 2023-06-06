@@ -21,8 +21,8 @@ to_tg_bot () {
         data="{\"chat_id\":\"$CHAT_ID\",\"text\":\"$msg\",\"entities\":$entities,\"disable_notification\": true}"
         result=`curl -s -H 'Content-Type: application/json' -d "$data" -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage`
         if `jq '.ok' <<< "$result"`
-            then echo -e 'message sent' 
-            else echo -e 'failed to send' && echo -e "$result \n"
+            then echo 'message sent' 
+            else echo 'failed to send' && echo "$result"
         fi
     fi
 }
