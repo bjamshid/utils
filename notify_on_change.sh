@@ -6,7 +6,6 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-# source telegram.sh to send notification when condition ini the loop is satisfied
 source telegram.sh
 
 # until [[ `w -h | awk '{print $3}' | sort | uniq | wc -l` -gt 1 ]]
